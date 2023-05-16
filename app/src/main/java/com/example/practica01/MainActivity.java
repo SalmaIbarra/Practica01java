@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnPulsar;
     private EditText txtNombre;
     private TextView lblSaludar;
+    private Button btnLimpiar;
+    private Button btnCerrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,28 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     String str= "Hola "+txtNombre.getText().toString()+" ¿Como estas?";
+                    lblSaludar.setText(str.toString());
+                    //Finish
+                    //Limpiar
+                    //Kotlin
 
                 }
+            }
+        });
+
+        btnLimpiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Validamos el limpiar
+                txtNombre.setText("");
+                lblSaludar.setText("::");
+            }
+        });
+
+        btnCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
